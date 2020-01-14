@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  rabbit-mq:
+    image: rabbitmq:3.7-management
+    container_name: rabbit-mq
+    hostname: rabbitmq
+    volumes:
+      - ./rabbitmqdata:/var/lib/rabbitmq
+    ports:
+      - "7000:15672"
+      - "7001:5672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=root
+      - RABBITMQ_DEFAULT_PASS=root
